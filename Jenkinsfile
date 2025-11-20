@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven-3.9.0'       // Make sure this matches your Jenkins Global Tool Config
-        jdk 'JDK-17'              // Match the POM compiler release version
+        jdk 'JDK-17'              // Match your installed JDK version in Jenkins
     }
 
     environment {
@@ -50,12 +50,13 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    // Default test command
                     def testCommand = 'mvn test'
 
-                    // Branch-based test execution
+                    // Branch-based test execution with safe navigation
                     if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') {
                         testCommand = 'mvn test -Dsuite=regression'
-                    } else if (env.BRANCH_NAME.startsWith('feature/')) {
+                    } else if (env.BRANCH_NAME?.startsWith('feature/')) {
                         testCommand = 'mvn test -Dsuite=smoke'
                     }
 
@@ -65,8 +66,8 @@ pipeline {
             }
             post {
                 always {
-                    // ✅ Publish TestNG results
-                    junit '**/target/surefire-reports/*.xml'
+                    // ✅ Publish JUnit/TestNG results
+                    junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
 
                     // ✅ Archive test reports
                     archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
