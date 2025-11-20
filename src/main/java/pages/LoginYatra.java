@@ -8,9 +8,9 @@ public class LoginYatra {
     private WebDriver driver;
 
     // Locators
-    private By username = By.id("//*[@id=\"mobile-number\"]");
-    private By password = By.id("//*[@id=\"pass\"]");
-    private By loginButton = By.id("//button[text()=\"Login\"]");
+    private By username = By.xpath("//*[@id='mobile-number']");
+    private By password = By.xpath("//*[@id='pass']");
+    private By loginButton = By.xpath("//button[text()='Login']");
 
     // Constructor
     public LoginYatra(WebDriver driver) {

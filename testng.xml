@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="YatraAutomationSuite">
-    <test name="YatraTests">
+    <test name="YatraLoginTests">
         <classes>
-            <class name="tests.LoginTest"/>
-            <!-- Add more test classes here -->
+            <class name="LoginTePage.LoginTest"/>
         </classes>
     </test>
 </suite>
