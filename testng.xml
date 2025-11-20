@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="YatraAutomationSuite">
+    <test name="YatraTests">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <!-- Add more test classes here -->
+        </classes>
+    </test>
+</suite>
