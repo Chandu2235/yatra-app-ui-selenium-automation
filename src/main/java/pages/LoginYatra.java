@@ -7,7 +7,7 @@ public class LoginYatra {
 
     private WebDriver driver;
 
-    // Locators
+    // Locators - updated 
     private By username = By.xpath("//*[@id='mobile-number']");
     private By password = By.xpath("//*[@id='pass']");
     private By loginButton = By.xpath("//button[contains(text(),'Login')]");
