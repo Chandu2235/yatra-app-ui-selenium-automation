@@ -41,7 +41,7 @@ public class LoginTest {
     public void testYatraLogin() {
         driver.get("https://www.yatra.com/");
         
-        loginPage.enterUsernameText("[email]");
+        loginPage.enterUsernameText("chandu.birhade@gmail.com");
         loginPage.clickLoginButton();
         
         // Add some wait or verification here
@@ -51,7 +51,7 @@ public class LoginTest {
             e.printStackTrace();
         }
         
-        loginPage.enterPasswordText("[password]");
+        loginPage.enterPasswordText("Chandu22@#");
         loginPage.clickLoginButton();
         
         // Add assertions here to verify login success
