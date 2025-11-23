@@ -1,4 +1,4 @@
-# YatraApplicationAutomationPractice
+# Yatra_Application_Automation
 
 Page Object Model (POM) structure and automation framework design along with CI/CD intergations pipelines. 
 
